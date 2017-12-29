@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test-func </title>
+</head>
+<body>
+  <script type="text/javascript">
+      window.onload = function () {
+
+         function test() {
+             function testInner() {
+                 console.log('testInner');
+             }
+             testInner();
+             console.log('test');
+         }
+
+          test.f = function () {
+              console.log('test_f');
+          };
+
+
+          test.prototype.pf = function () {
+              console.log('test_pf');
+          };
+
+          ///直接使用
+//          test();
+
+          //创建的时候就像是调用test();一样
+          var testInstance = new test();
+          testInstance.pf();
+          //实例上面没有f();
+          testInstance.f();
+
+          ///使用f();实例上面没有f();
+          test.f();
+
+      };
+  </script>
+</body>
+</html>

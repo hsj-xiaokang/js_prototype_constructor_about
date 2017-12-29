@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test-func-constructor </title>
+</head>
+<body>
+  <script type="text/javascript">
+      window.onload = function () {
+
+         function test() {
+             function testInner() {
+                 console.log('testInner');
+             }
+             testInner();
+             console.log('test');
+         }
+
+ 	     /**
+		 ƒ test() {
+             function testInner() {
+                 console.log('testInner');
+             }
+             testInner();
+             console.log('test');
+         }
+		 
+          ƒ test() {
+             function testInner() {
+                 console.log('testInner');
+             }
+             testInner();
+             console.log('test');
+         }
+		 
+         ƒ Function() { [native code] }
+		 **/
+		 console.log(test);
+		 
+		 console.log(test.prototype.constructor );
+		 
+		 console.log(test.constructor );
+
+      };
+  </script>
+</body>
+</html>

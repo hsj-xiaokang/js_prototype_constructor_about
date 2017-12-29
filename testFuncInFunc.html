@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testFuncInFunc</title>
+</head>
+<body>
+ <script>
+     window.onload = function () {
+
+         function a() {
+             console.log("this is a function!");
+         }
+         a.b = function () {
+             console.log("this is b function!");
+         }
+
+         //run
+         a();
+         a.b();
+     };
+ </script>
+</body>
+</html>

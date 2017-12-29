@@ -1,0 +1,116 @@
+<html>
+<body>
+
+<script type="text/javascript">
+/**
+  function (){}
+               的prototype是没有的,是undefined
+               的 __proto__是有的，就是Object的原型prototype
+				 
+  Object {} 
+            的prototype是有的，是Object {}
+            的prototype的prototype是没有的，是undefined
+            的prototype的__proto__是没有的，是null
+            的__proto__是有的，是返回装着function (){}	
+
+  function a(){ alert("a");}的实例 new a(); 
+                             的prototype是没有的,是undefined
+                             的__proto__是有的，是a.prototype 
+							 的__proto__的prototype是没有的，是undefined
+							 的__proto__的__proto__是有的，是内置对象Object的prototype
+				 
+*/
+
+function a(){
+  alert("a");
+}
+/**
+1
+function a(){
+  alert("a");
+}
+*/
+console.log(a);
+
+/**
+2
+function Function() { [native code] }
+*/
+console.log(a.constructor);
+/**
+3
+function a(){
+  alert("a");
+}
+*/
+console.log(a.prototype.constructor);
+
+/**
+4
+function Function() { [native code] }
+*/
+console.log(Function);
+
+/**
+5
+function Function() { [native code] }
+*/
+console.log(Function.constructor);
+
+/**
+6
+function () {}
+*/
+console.log(a.__proto__);
+
+/**
+7
+function () {}
+*/
+console.log(Object.__proto__);
+
+/**
+8
+undefined
+*/
+console.log(a.__proto__.prototype);
+/**
+9
+Object {}就是object的原型对象
+*/
+console.log(a.__proto__.__proto__);
+
+/**
+10
+undefined   object的原型的原型
+*/
+console.log(a.__proto__.__proto__.prototype);
+
+/**
+11
+null   object的原型的_proto__
+*/
+console.log(a.__proto__.__proto__.__proto__);
+
+/**
+12
+Object {}就是object的原型对象
+*/
+console.log(Object.prototype);
+
+/**
+13
+undefined   object的原型的原型
+*/
+console.log(Object.prototype.prototype);
+
+/**
+14
+null   object的原型的_proto__
+*/
+console.log(Object.prototype.__proto__);
+
+</script>
+
+</body>
+</html>

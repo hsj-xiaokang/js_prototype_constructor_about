@@ -1,0 +1,48 @@
+<html>
+<body>
+
+<script type="text/javascript">
+    function a(){
+        alert("a");
+    }
+    var a_instance = new a();
+
+    /**
+     1
+     a的prototype
+     */
+    console.log(a_instance.__proto__);
+    /**
+     2
+     a的prototype的prototype=undefined
+     */
+    console.log(a_instance.__proto__.prototype);
+    /**
+     3
+     a的prototype的__proto__=object的原型
+     */
+    console.log(a_instance.__proto__.__proto__);
+    /**
+     4
+     a的prototype的__proto__=object的原型的原型 undefined
+     */
+    console.log(a_instance.__proto__.__proto__.prototype);
+    /**
+     5
+     a的prototype的__proto__=object的原型的__proto__ null
+     */
+    console.log(a_instance.__proto__.__proto__.__proto__);
+
+
+    //output
+    /**
+     * Object {}
+     * undefined
+     * Object {}
+     * undefined
+     * null
+     */
+</script>
+
+</body>
+</html>
